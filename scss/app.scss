@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rubik:wght@300;400;500&display=swap");
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "../node_modules/animate.css/animate.min.css";
+
+@import "../node_modules/sweetalert2/src/sweetalert2.scss";
+
+$font-family-sans-serif: "Rubik", "Padauk", sans-serif;
+
+$primary: #333;
+$border-color: #333;
+.category {
+  cursor: pointer;
+}
+.category.active {
+  background-color: $primary;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+.category:hover{
+  background-color: #666;
+  color: white;
+
+}
+.product-img {
+  height: 100px;
+}
+.product-img {
+  margin-bottom: -50px;
+}
+.product-title {
+  margin-top: 50px;
+}
+@media screen and (max-width: 470px) {
+  .categories {
+    overflow-x: auto;
+  }
+}
+.categories {
+  width: 100%;
+}
+.description {
+  height: 3rem;
+  overflow: hidden;
+}
+$btn-border-radius: 0px;
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
