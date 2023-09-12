@@ -1,3 +1,5 @@
+import { Button } from "bootstrap";
+
 export const normalBtn = () => {
   return ` 
     <button class="btn btn-outline-primary w-100 d-block">

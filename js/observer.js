@@ -1,5 +1,5 @@
 import { cartData } from "./data";
-import { counter } from "./functions";
+import { counter, totalCostCalc } from "./functions";
 import { cartItems } from "./selectors";
 
 export const observeCart = () => {
@@ -10,6 +10,7 @@ export const observeCart = () => {
 
   const observer = new MutationObserver(() => {
     counter();
+    totalCostCalc();
     localStorage.setItem("cart-data", JSON.stringify(cartData));
   });
   observer.observe(cartItems, observerOptions);

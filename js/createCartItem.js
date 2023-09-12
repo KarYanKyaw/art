@@ -1,7 +1,7 @@
 export const createCartItem = (id, image, title, price, quantity) => {
   const cartItem = document.createElement("div");
   cartItem.classList.add("cart-item", "mb-3");
-  cartItem.setAttribute("product-id", id);
+  cartItem.setAttribute("item-id", id);
   cartItem.innerHTML = `
   <img
   class="cart-img ms-3"
@@ -14,7 +14,7 @@ export const createCartItem = (id, image, title, price, quantity) => {
     <p class="fw-medium cart-title fs-5 text-truncate">
     ${title}
     </p>
-    <div class="text-end me-3 delBtn">
+    <div class="text-end me-2 delBtn">
       <i class="bi bi-trash3 text-danger"></i>
     </div>
   </div>

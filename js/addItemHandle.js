@@ -10,12 +10,12 @@ export const addToCart = (e) => {
   } else {
     const productData = {
       ...products.find((el) => el.id == id),
-      quantity: 1,
+      quantity: 4,
     };
     cartData.unshift(productData);
     e.target.classList.add("active");
     e.target.innerHTML = `Added to cart <i class="bi pe-none bi-cart-check"></i>`;
-    cartItemRender();
+    cartItemRender(cartData);
   }
   return cartData;
 };

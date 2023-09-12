@@ -1,12 +1,10 @@
 import { createCartItem } from "./createCartItem";
-import { cartData } from "./data";
 import { counter } from "./functions";
 import { cartItems } from "./selectors";
 
-export const cartItemRender = () => {
+export const cartItemRender = (itemsToRender) => {
   cartItems.innerHTML = "";
-  cartData.forEach(({ id, image, title, price, quantity }) => {
+  itemsToRender.forEach(({ id, image, title, price, quantity }) => {
     cartItems.append(createCartItem(id, image, title, price, quantity));
   });
-  counter();
 };
