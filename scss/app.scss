@@ -1,52 +1,95 @@
 @import url("https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&family=Rubik:wght@300;400;500&display=swap");
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "../node_modules/animate.css/animate.min.css";
-
 @import "../node_modules/sweetalert2/src/sweetalert2.scss";
 
 $font-family-sans-serif: "Rubik", "Padauk", sans-serif;
-
+$btn-border-radius: 0px;
+$btn-border-radius-lg: 0;
 $primary: #333;
+$btn-border-width: 2px;
 $border-color: #333;
 .category {
   cursor: pointer;
 }
+
 .category.active {
   background-color: $primary;
   color: white;
   rotate: -5deg;
+  scale: 0.95;
   transition: 0.3s ease-in-out;
 }
+
 .category:hover {
   background-color: $primary;
   color: white;
 }
+
 .product-img {
   height: 100px;
   transition: 0.3s ease-in-out;
 }
+
 .product:hover {
   .product-img {
     rotate: -7deg;
   }
 }
+
 .product-img {
   margin-bottom: -50px;
 }
+
 .product-title {
   margin-top: 50px;
 }
+
 @media screen and (max-width: 470px) {
   .categories {
     overflow-x: auto;
   }
 }
+
 .categories {
   width: 100%;
 }
+
 .description {
   height: 3rem;
   overflow: hidden;
 }
-$btn-border-radius: 0px;
+
+.quantity {
+  width: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-img {
+  height: 80px;
+  margin-bottom: -30px;
+}
+
+.cart-title {
+  margin-top: 20px;
+}
+
+.delBtn {
+  cursor: pointer;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: 500ms ease;
+}
+.cart-item:hover {
+  .delBtn {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.quantityDecrement,
+.quantityIncrement {
+  cursor: pointer;
+}
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

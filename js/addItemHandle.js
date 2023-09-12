@@ -1,4 +1,6 @@
+import { cartItemRender } from "./cartRender";
 import { cartData, products } from "./data";
+import { counter } from "./functions";
 
 export const addToCart = (e) => {
   if (!e.target.classList.contains("btn")) return;
@@ -13,7 +15,7 @@ export const addToCart = (e) => {
     cartData.unshift(productData);
     e.target.classList.add("active");
     e.target.innerHTML = `Added to cart <i class="bi pe-none bi-cart-check"></i>`;
-    localStorage.setItem("cart-data", JSON.stringify(cartData));
+    cartItemRender();
   }
   return cartData;
 };
