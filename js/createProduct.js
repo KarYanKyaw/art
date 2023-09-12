@@ -9,9 +9,9 @@ export const createProduct = (id, title, image, description, price, rating) => {
       src="${image}"
       alt=""
     />
-    <div class="border border-2 p-3">
-      <p class="fw-bold product-title text-truncate">${title}</p>
-      <p class="text-black-50 description">
+    <div class="border border-2 p-3 user-select-none">
+      <p class="fw-bold product-title text-truncate ">${title}</p>
+      <p class="text-black-50  description">
       ${description}
       </p>
       <div class="rating d-flex justify-content-between">

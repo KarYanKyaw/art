@@ -14,15 +14,21 @@ $border-color: #333;
 .category.active {
   background-color: $primary;
   color: white;
-  transition: 0.5s ease-in-out;
+  rotate: -5deg;
+  transition: 0.3s ease-in-out;
 }
-.category:hover{
-  background-color: #666;
+.category:hover {
+  background-color: $primary;
   color: white;
-
 }
 .product-img {
   height: 100px;
+  transition: 0.3s ease-in-out;
+}
+.product:hover {
+  .product-img {
+    rotate: -7deg;
+  }
 }
 .product-img {
   margin-bottom: -50px;
