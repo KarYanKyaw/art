@@ -29,7 +29,8 @@ const removeFunction = (id) => {
   }
 };
 const quantityDecrement = (id) => {
-  const quantityEl = cartItems.querySelector(".quantity");
+  const cartItem = cartItems.querySelector(`[item-id="${id}"]`);
+  const quantityEl = cartItem.querySelector(".quantity");
   const currentQuantity = parseInt(quantityEl.innerText);
   if (currentQuantity === 1) {
     removeFunction(id);
@@ -37,13 +38,14 @@ const quantityDecrement = (id) => {
     quantityEl.innerText = currentQuantity - 1;
     const selectedItem = cartData.find((el) => el.id == id);
     if (!selectedItem) return;
+
     selectedItem.quantity -= 1;
   }
 };
 const quantityIncrement = (id) => {
-  const quantityEl = cartItems.querySelector(".quantity");
+  const cartItem = cartItems.querySelector(`[item-id="${id}"]`);
+  const quantityEl = cartItem.querySelector(".quantity");
   const currentQuantity = parseInt(quantityEl.innerText);
-
   quantityEl.innerText = currentQuantity + 1;
   const selectedItem = cartData.find((el) => el.id == id);
   if (!selectedItem) return;
