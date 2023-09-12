@@ -273,4 +273,6 @@ export const categories = [
   "electronics",
   "jewelry",
 ];
-categories.unshift("all")
+categories.unshift("all");
+
+export let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];

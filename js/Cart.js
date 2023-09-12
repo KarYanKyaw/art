@@ -1,7 +1,8 @@
+import { addToCart } from "./addItemHandle";
 import { categoryRender } from "./categoryRender";
 import { categories, products } from "./data";
 import { productRender } from "./productRender";
-import { categoryBtn } from "./selectors";
+import { productRow } from "./selectors";
 
 class Cart {
   initialRendering() {
@@ -9,7 +10,9 @@ class Cart {
     categoryRender(categories);
   }
   listeners() {
-
+    productRow.addEventListener("click", (e) => {
+      addToCart(e);
+    });
   }
   init() {
     console.log("Start");

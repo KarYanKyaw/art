@@ -1,9 +1,13 @@
+import { activeBtn, normalBtn } from "./buttonStates.js";
+import { cartData } from "./data";
+import { rateStar } from "./rateStars";
+
 export const createProduct = (id, title, image, description, price, rating) => {
   const product = document.createElement("div");
   product.className = "col-lg-4 col-10 col-md-6 mb-5";
-  product.setAttribute("product-id", id);
+  const isExisted = cartData.find((el) => el.id == id);
   product.innerHTML = `
-    <div class="product">
+    <div class="product" product-id="${id}">
     <img
       class="product-img ms-3"
       src="${image}"
@@ -16,20 +20,14 @@ export const createProduct = (id, title, image, description, price, rating) => {
       </p>
       <div class="rating d-flex justify-content-between">
         <div class="stars">
-          <i class="bi bi-star"></i>
-          <i class="bi bi-star"></i>
-          <i class="bi bi-star"></i>
-          <i class="bi bi-star"></i>
-          <i class="bi bi-star"></i>
+        ${rateStar(rating.rate.toFixed(0))}
         </div>
         <div class="">( <span id="rate">${rating.rate}</span> / 5)</div>
       </div>
       <hr />
       <div class="price-add">
         <p class="fw-medium">$${price}</p>
-        <button class="btn btn-outline-primary w-100 d-block">
-          Add to cart <i class="bi bi-cart-plus"></i>
-        </button>
+        ${isExisted ? activeBtn() : normalBtn()}
       </div>
     </div>
   </div>

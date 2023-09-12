@@ -17,15 +17,20 @@
                 <p class="mb-0 fs-3">MMS-IT solutions</p>
                 <p class="text-black-50">E-commerce</p>
               </div>
-              <button
-                class="btn btn-primary"
-                type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#myCart"
-                aria-controls="staticBackdrop"
-              >
-                <i class="bi bi-cart"></i>
-              </button>
+              <div class="nav-controls">
+                <button class="btn btn-primary" id="search">
+                  <i class="bi bi-search"></i>
+                </button>
+                <button
+                  class="btn btn-primary"
+                  type="button"
+                  data-bs-toggle="offcanvas"
+                  data-bs-target="#myCart"
+                  aria-controls="staticBackdrop"
+                >
+                  <i class="bi bi-cart"></i>
+                </button>
+              </div>
             </div>
           </nav>
         </header>
@@ -33,7 +38,7 @@
         <section class="category-section">
           <div>
             <p class="ms-2 mb-2 fw-medium">Product Categories</p>
-            <div class="categories user-select-none">
+            <div class="categories ms-2 user-select-none">
               <ul class="list-unstyled d-flex" id="categories"></ul>
             </div>
             <hr />
