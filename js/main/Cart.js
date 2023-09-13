@@ -1,11 +1,11 @@
-import { addToCart } from "./addItemHandle";
-import { cartControl } from "./cartItemControl";
-import { cartItemRender } from "./cartRender";
-import { categoryRender } from "./categoryRender";
-import { categories, products } from "./data";
-import { observeCart } from "./observer";
-import { productRender } from "./productRender";
-import { cartItems, productRow } from "./selectors";
+import { cartItemRender } from "../cart-item/cartRender";
+import { categoryRender } from "../category/categoryRender";
+import { categories, products } from "../functions/data";
+import { observeCart } from "../functions/functions";
+import { productRender } from "../product/productRender";
+import { cartItems, productRow } from "../main/selectors";
+import { addToCart } from "../product/addProductHandle";
+import { cartControl } from "../cart-item/cartItemControl";
 
 class Cart {
   storageRender() {
@@ -22,7 +22,7 @@ class Cart {
 
   listeners() {
     productRow.addEventListener("click", (e) => {
-      addToCart(e);
+      addToCart(e)
     });
     cartItems.addEventListener("click", (e) => {
       cartControl(e);

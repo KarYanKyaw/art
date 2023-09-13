@@ -1,6 +1,7 @@
+import { cartItems } from "../main/selectors";
 import { cartItemRender } from "./cartRender";
-import { cartData } from "./data";
-import { cartItems } from "./selectors";
+import { cartData } from "../functions/data";
+
 
 export const cartControl = (e) => {
   const id = e.target.closest(".cart-item").getAttribute("item-id");
@@ -38,7 +39,6 @@ const quantityDecrement = (id) => {
     quantityEl.innerText = currentQuantity - 1;
     const selectedItem = cartData.find((el) => el.id == id);
     if (!selectedItem) return;
-
     selectedItem.quantity -= 1;
   }
 };

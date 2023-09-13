@@ -1,5 +1,5 @@
 import { createProduct } from "./createProduct";
-import { productRow } from "./selectors";
+import { productRow } from "../main/selectors";
 
 export const productRender = (productsToRender) => {
   productRow.innerHTML = "";

@@ -1,6 +1,5 @@
-import { activeBtn, normalBtn } from "./buttonStates.js";
-import { cartData } from "./data";
-import { rateStar } from "./rateStars";
+import { cartData } from "../functions/data";
+import { rateStar,activeBtn, normalBtn } from "../functions/functions";
 
 export const createProduct = (id, title, image, description, price, rating) => {
   const product = document.createElement("div");

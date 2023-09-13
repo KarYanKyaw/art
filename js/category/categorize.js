@@ -1,5 +1,5 @@
-import { products } from "./data";
-import { productRender } from "./productRender";
+import { products } from "../functions/data";
+import { productRender } from "../product/productRender";
 
 export const categorize = (categoryBtn) => {
   const category = categoryBtn.innerText.toLowerCase();

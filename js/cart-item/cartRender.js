@@ -1,6 +1,5 @@
+import { cartItems } from "../main/selectors";
 import { createCartItem } from "./createCartItem";
-import { counter } from "./functions";
-import { cartItems } from "./selectors";
 
 export const cartItemRender = (itemsToRender) => {
   cartItems.innerHTML = "";

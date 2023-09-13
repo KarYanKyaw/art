@@ -1,6 +1,6 @@
+import { categories } from "../functions/data";
+import { categoryContainer } from "../main/selectors";
 import { createCategory } from "./createCategory";
-import { categories } from "./data";
-import { categoryContainer } from "./selectors";
 
 export const categoryRender = () => {
   categories.forEach((el) => {

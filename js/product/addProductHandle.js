@@ -1,6 +1,5 @@
-import { cartItemRender } from "./cartRender";
-import { cartData, products } from "./data";
-import { counter } from "./functions";
+import { cartItemRender } from "../cart-item/cartRender";
+import { cartData, products } from "../functions/data";
 
 export const addToCart = (e) => {
   if (!e.target.classList.contains("btn")) return;
