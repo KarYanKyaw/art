@@ -7,7 +7,7 @@ export const createCartItem = (id, image, title, price, quantity) => {
   class="cart-img ms-3"
   src="${image}"
 />
-<div class="cart-item-content p-3 border border-2">
+<div class="cart-item-content bg-white p-3 border border-2">
   <div
     class="d-flex align-items-center overflow-hidden d-flex justify-content-between"
   >

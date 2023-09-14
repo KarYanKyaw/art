@@ -1,6 +1,8 @@
 import { cartData } from "./data";
 import { cartCount, total, cartItems } from "../main/selectors";
 
+
+// rate stars
 export const rateStar = (rate) => {
   let result = "";
   for (let i = 0; i < 5; i++) {
@@ -12,11 +14,13 @@ export const rateStar = (rate) => {
   return result;
 };
 
+// counter
 const counter = () => {
   cartCount.forEach((el) => (el.innerText = cartData.length));
   return cartCount;
 };
 
+// total calc
 const totalCostCalc = () => {
   let totalCost = 0;
   cartData.forEach((el) => {
@@ -40,6 +44,7 @@ export const activeBtn = () => {
       </button>`;
 };
 
+// observer
 export const observeCart = () => {
   const observerOptions = {
     childList: true,

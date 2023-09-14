@@ -276,3 +276,7 @@ export const categories = [
 categories.unshift("all");
 
 export let cartData = JSON.parse(localStorage.getItem("cart-data")) || [];
+export const config = {
+  min: 1,
+  max: 7,
+};
