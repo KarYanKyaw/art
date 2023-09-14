@@ -4,7 +4,7 @@ import { swalToast } from "../functions/swal";
 import { app, cartBtn } from "../main/selectors";
 
 export const addToCart = (e) => {
-  if (!e.target.classList.contains("btn")) return;
+  if (!e.target.classList.contains("addBtn")) return;
   const productCard = e.target.closest(".product");
   const id = productCard.getAttribute("product-id");
   if (cartData.some((el) => el.id == id)) {

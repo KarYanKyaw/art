@@ -1,6 +1,5 @@
 import { cartData } from "./data";
-import { cartCount, total, cartItems } from "../main/selectors";
-
+import { cartCount, total, cartItems, myCart } from "../main/selectors";
 
 // rate stars
 export const rateStar = (rate) => {
@@ -33,13 +32,13 @@ const totalCostCalc = () => {
 // btn states
 export const normalBtn = () => {
   return ` 
-    <button class="btn btn-outline-primary w-100 d-block">
+    <button class="btn btn-outline-primary addBtn w-100 d-block">
       Add to cart <i class="bi pe-none bi-cart-plus"></i>
     </button>`;
 };
 export const activeBtn = () => {
   return ` 
-      <button class="btn btn-outline-primary active w-100 d-block">
+      <button class="btn btn-outline-primary addBtn active w-100 d-block">
       Added to cart <i class="bi pe-none bi-cart-check"></i>
       </button>`;
 };
@@ -55,6 +54,13 @@ export const observeCart = () => {
     counter();
     totalCostCalc();
     localStorage.setItem("cart-data", JSON.stringify(cartData));
+    if (cartData.length == 0) {
+      myCart.hide();
+      [...document.querySelectorAll(".addBtn")].forEach((btn) => {
+        btn.classList.remove("active"),
+          (btn.innerHTML = `Add to cart <i class="bi pe-none bi-cart-plus"></i>`);
+      });
+    }
   });
   observer.observe(cartItems, observerOptions);
 };
