@@ -1,4 +1,4 @@
-import { Offcanvas } from 'bootstrap'
+import { Offcanvas } from "bootstrap";
 export const app = document.querySelector("#app");
 export const productRow = document.querySelector("#products");
 export const categoryContainer = document.querySelector("#categories");
@@ -7,4 +7,8 @@ export const cartItems = document.querySelector("#cart-items");
 export const total = document.querySelector("#total");
 export const orderBtn = document.querySelector("#orderBtn");
 export const cartBtn = document.querySelector("#cartBtn");
-export const myCart = new Offcanvas("#myCart")
+export const searchForm = document.querySelector("#searchForm");
+export const searchInput = document.querySelector("#searchInput");
+export const searchBtn = document.querySelector("#search");
+export const clearInputBtn = document.querySelector(".clearInputBtn");
+export const myCart = new Offcanvas("#myCart");

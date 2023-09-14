@@ -1,5 +1,13 @@
-import { cartData } from "./data";
-import { cartCount, total, cartItems, myCart } from "../main/selectors";
+import { cartData, products } from "./data";
+import {
+  cartCount,
+  total,
+  cartItems,
+  myCart,
+  searchForm,
+  searchInput,
+} from "../main/selectors";
+import { productRender } from "../product/productRender";
 
 // rate stars
 export const rateStar = (rate) => {
@@ -43,6 +51,16 @@ export const activeBtn = () => {
       </button>`;
 };
 
+export const notFound = () => {
+  const div = document.createElement("div");
+  const p = document.createElement("p");
+  p.innerText =
+    "No product is found! Use different keywords and try searching again!!!";
+  p.classList.add("display-6", "fw-semibold", "text-center");
+  div.append(p);
+  console.log(div);
+  return div;
+};
 // observer
 export const observeCart = () => {
   const observerOptions = {
@@ -63,4 +81,23 @@ export const observeCart = () => {
     }
   });
   observer.observe(cartItems, observerOptions);
+};
+
+export const search = (e) => {
+  e.preventDefault();
+  const formData = new FormData(searchForm);
+  productRender(
+    products.filter((product) => {
+      const reg = new RegExp(formData.get("searchInput"), "i");
+      return (
+        product.title.search(reg) !== -1 ||
+        product.description.search(reg) !== -1
+      );
+    })
+  );
+};
+export const clearInput = (e) => {
+  e.stopPropagation();
+  searchInput.value = "";
+  productRender(products);
 };

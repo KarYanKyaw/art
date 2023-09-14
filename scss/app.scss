@@ -9,6 +9,24 @@ $btn-border-radius-lg: 0;
 $primary: #333;
 $btn-border-width: 2px;
 $border-color: #333;
+$input-border-radius: 0px;
+$input-border-width: 2px;
+$input-focus-box-shadow: 0;
+$input-focus-border-color: #666;
+body {
+  overflow-x: hidden;
+}
+.clearInputBtn {
+  top: 7px;
+  right: 2px;
+  z-index: 1005;
+  cursor: pointer;
+}
+.categories {
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
 .category {
   cursor: pointer;
 }
@@ -43,16 +61,6 @@ $border-color: #333;
 
 .product-title {
   margin-top: 50px;
-}
-
-@media screen and (max-width: 470px) {
-  .categories {
-    overflow-x: auto;
-  }
-}
-
-.categories {
-  width: 100%;
 }
 
 .description {
@@ -92,4 +100,9 @@ $border-color: #333;
 .quantityIncrement {
   cursor: pointer;
 }
+.custom-dropdown-menu {
+  right: -61px !important;
+  min-width: 180px !important; /* Adjust the width as needed */
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

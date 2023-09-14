@@ -17,12 +17,46 @@
                 <p class="mb-0 fs-3">MMS-IT solutions</p>
                 <p class="text-black-50">E-commerce</p>
               </div>
-              <div class="nav-controls">
-                <button class="btn btn-outline-primary" id="search">
-                  <i class="bi bi-search"></i>
-                </button>
+              <div
+                class="nav-controls d-flex justify-content-center align-items-center"
+              >
+                <div class="dropdown">
+                  <button
+                    class="btn btn-outline-primary"
+                    id="search"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="bi bi-search"></i>
+                  </button>
+                  <ul
+                    class="dropdown-menu p-0 custom-dropdown-menu dropdown-menu-end"
+                    aria-labelledby="search"
+                  >
+                    <li>
+                      <form class="p-0" id="searchForm">
+                        <div class="input-group">
+                          <button class="btn btn-primary" type="submit">
+                            <i class="bi bi-search"></i>
+                          </button>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Search..."
+                            aria-label="Search"
+                            id="searchInput"
+                            name="searchInput"
+                          />
+                          <i
+                            class="bi bi-x position-absolute fs-5 position-relative clearInputBtn"
+                          ></i>
+                        </div>
+                      </form>
+                    </li>
+                  </ul>
+                </div>
                 <button
-                  class="btn btn-primary position-relative"
+                  class="btn btn-primary position-relative ms-3"
                   type="button"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#myCart"
@@ -40,37 +74,45 @@
             </div>
           </nav>
         </header>
-        <!-- category -->
-        <section class="category-section">
-          <div>
-            <p class="ms-2 mb-2 fw-medium">Product Categories</p>
-            <div class="categories ms-2 user-select-none">
-              <ul class="list-unstyled d-flex" id="categories"></ul>
-            </div>
-            <hr />
+        <!-- banner -->
+        <div
+          class="d-flex w-100 flex-column align-items-center justify-content-between min-vh-100"
+        >
+          <!-- category and products -->
+          <div class="w-100">
+            <!-- category -->
+            <section class="category-section">
+              <div>
+                <p class="ms-2 mb-2 fw-medium">Product Categories</p>
+                <div class="categories ms-2 user-select-none">
+                  <ul class="list-unstyled d-flex" id="categories"></ul>
+                </div>
+                <hr />
+              </div>
+            </section>
+            <!-- products -->
+            <section class="product-section">
+              <h3 class="mt-2 mb-4 text-center">Products</h3>
+              <div
+                class="row justify-content-center justify-content-lg-start g-3"
+                id="products"
+              ></div>
+            </section>
           </div>
-        </section>
-        <!-- products -->
-        <section class="product-section">
-          <h3 class="mt-2 mb-4 text-center">Featured Products</h3>
-          <div
-            class="row justify-content-center justify-content-lg-start g-3"
-            id="products"
-          ></div>
-        </section>
+          <!-- footer -->
+          <footer
+            class="bg-primary w-100 mt-auto d-flex align-items-center justify-content-center p-3 mt-5"
+          >
+            <p class="text-white mb-0 me-5">
+              Copyright &copy;
+              <a class="text-reset" href="https://mms-it.com">MMS IT</a>
+            </p>
+            <a href="#nav" class="btn btn-outline-light">
+              <i class="bi bi-arrow-up"></i>
+            </a>
+          </footer>
+        </div>
       </div>
-      <!-- footer -->
-      <footer
-        class="bg-primary d-flex align-items-center justify-content-center p-3 mt-5"
-      >
-        <p class="text-white mb-0 me-5">
-          Copyright &copy;
-          <a class="text-reset" href="https://mms-it.com">MMS IT</a>
-        </p>
-        <a href="#nav" class="btn btn-outline-light">
-          <i class="bi bi-arrow-up"></i>
-        </a>
-      </footer>
       <!-- offcanvas -->
       <div
         class="offcanvas offcanvas-end"
