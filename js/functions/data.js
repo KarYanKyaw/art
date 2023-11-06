@@ -1,7 +1,8 @@
+export const products = [];
 import { categoryRender } from "../category/categoryRender";
 import { productRender } from "../product/productRender";
 
-export const base_URL = "'https://fakestoreapi.com";
+export const base_URL = "http://localhost:5174/api";
 
 export const dataFetching = async () => {
   const requestOptions = {
@@ -20,7 +21,7 @@ export const dataFetching = async () => {
   productRender(products);
 };
 
-export let cartData = [];
+export let cartData =  [];
 
 export const config = {
   min: 1,
