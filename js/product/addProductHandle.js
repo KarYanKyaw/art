@@ -1,5 +1,5 @@
 import { cartItemRender } from "../cart-item/cartRender";
-import { cartData, config } from "../functions/data";
+import { base_URL, cartData, config } from "../functions/data";
 import { swalToast } from "../functions/swal";
 import { app, cartBtn } from "../main/selectors";
 
@@ -22,10 +22,7 @@ export const addToCart = async (e) => {
       method: "GET",
       redirect: "follow",
     };
-    const res = await fetch(
-      `http://localhost:5174/api/products/${id}`,
-      requestOptions
-    );
+    const res = await fetch(`${base_URL}/${id}`, requestOptions);
     const data = await res.json();
     const productData = {
       ...data,
@@ -33,7 +30,7 @@ export const addToCart = async (e) => {
     };
 
     cartData.unshift(productData);
-    
+
     e.target.classList.add("active");
     e.target.innerHTML = `Added to cart <i class="bi pe-none bi-cart-check"></i>`;
 
