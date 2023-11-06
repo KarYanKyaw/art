@@ -17,3 +17,4 @@ export const productRender = (productsToRender) => {
   }
   return productRow;
 };
+

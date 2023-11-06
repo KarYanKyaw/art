@@ -1,11 +1,16 @@
 import { cartItemRender } from "../cart-item/cartRender";
-import { cartData, config, products } from "../functions/data";
+import { cartData, config } from "../functions/data";
 import { swalToast } from "../functions/swal";
 import { app, cartBtn } from "../main/selectors";
 
-export const addToCart = (e) => {
+export const addToCart = async (e) => {
   if (!e.target.classList.contains("addBtn")) return;
   const productCard = e.target.closest(".product");
+  e.target.classList.add("active");
+  e.target.innerHTML = `Adding to cart <div class="spinner-border spinner-border-sm" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>`;
+
   const id = productCard.getAttribute("product-id");
   if (cartData.some((el) => el.id == id)) {
     swalToast.fire({
@@ -13,11 +18,22 @@ export const addToCart = (e) => {
       title: "Your item is already in cart!",
     });
   } else {
+    const requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+    const res = await fetch(
+      `http://localhost:5174/api/products/${id}`,
+      requestOptions
+    );
+    const data = await res.json();
     const productData = {
-      ...products.find((el) => el.id == id),
+      ...data,
       quantity: config.min,
     };
+
     cartData.unshift(productData);
+    
     e.target.classList.add("active");
     e.target.innerHTML = `Added to cart <i class="bi pe-none bi-cart-check"></i>`;
 

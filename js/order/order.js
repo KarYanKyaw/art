@@ -33,15 +33,15 @@ export const placeOrder = () => {
           cartData.splice(0, cartData.length);
           cartItemRender(cartData);
           console.log(myOrder);
+          confirmModal.fire({
+            title: "Ordered!",
+            text: "Thank you for shopping with us!!!",
+            icon: "success",
+            showCancelButton: false,
+            confirmButtonText: "Ok",
+            reverseButtons: true,
+          });
         }
-        confirmModal.fire({
-          title: "Ordered!",
-          text: "Thank you for shopping with us!!!",
-          icon: "success",
-          showCancelButton: false,
-          confirmButtonText: "Ok",
-          reverseButtons: true,
-        });
       });
   }
 };

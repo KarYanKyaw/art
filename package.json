@@ -9,13 +9,15 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^4.3.9"
+    "vite": "^4.3.9",
+    "vite-plugin-simple-json-server": "^0.6.2"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",
     "sass": "^1.66.1",
-    "sweetalert2": "^11.7.27"
+    "sweetalert2": "^11.7.27",
+    "typed.js": "^2.0.16"
   }
 }

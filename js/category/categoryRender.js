@@ -1,9 +1,10 @@
-import { categories } from "../functions/data";
+
 import { categoryContainer } from "../main/selectors";
 import { createCategory } from "./createCategory";
 
-export const categoryRender = () => {
-  categories.forEach((el) => {
+export const categoryRender = (dataToRender) => {
+  categoryContainer.innerHTML = "";
+  dataToRender.forEach((el) => {
     categoryContainer.append(createCategory(el));
   });
   categoryContainer.children[0].classList.add("active");
