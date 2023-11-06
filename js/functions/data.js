@@ -1,4 +1,4 @@
-export const products = [];
+
 import { categoryRender } from "../category/categoryRender";
 import { productRender } from "../product/productRender";
 

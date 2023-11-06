@@ -1,4 +1,4 @@
-import { cartData, products } from "./data";
+import { cartData } from "./data";
 import {
   cartCount,
   total,
@@ -81,23 +81,4 @@ export const observeCart = () => {
     }
   });
   observer.observe(cartItems, observerOptions);
-};
-
-export const search = (e) => {
-  e.preventDefault();
-  const formData = new FormData(searchForm);
-  productRender(
-    products.filter((product) => {
-      const reg = new RegExp(`\\b${formData.get("searchInput")}\\b`, "i");
-      return (
-        reg.test(product.title) || reg.test(product.description)
-      );
-    })
-  );
-};
-
-export const clearInput = (e) => {
-  e.stopPropagation();
-  searchInput.value = "";
-  productRender(products);
 };

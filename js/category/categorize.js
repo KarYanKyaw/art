@@ -1,4 +1,4 @@
-import { base_URL, products } from "../functions/data";
+import { base_URL } from "../functions/data";
 import { loadingProduct } from "../product/loadingProduct";
 import { productRender } from "../product/productRender";
 

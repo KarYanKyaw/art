@@ -1,6 +1,5 @@
-import { cartItemRender } from "../cart-item/cartRender";
 import { dataFetching } from "../functions/data";
-import { clearInput, observeCart, search } from "../functions/functions";
+import { observeCart } from "../functions/functions";
 import {
   cartItems,
   clearInputBtn,
