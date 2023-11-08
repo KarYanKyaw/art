@@ -2,7 +2,7 @@ export const products = [];
 import { categoryRender } from "../category/categoryRender";
 import { productRender } from "../product/productRender";
 
-export const base_URL = "http://localhost:5174/api";
+export const base_URL = "http://localhost:5173/api";
 
 export const dataFetching = async () => {
   const requestOptions = {

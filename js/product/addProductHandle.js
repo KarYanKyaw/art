@@ -6,12 +6,9 @@ import { app, cartBtn } from "../main/selectors";
 export const addToCart = async (e) => {
   if (!e.target.classList.contains("addBtn")) return;
   const productCard = e.target.closest(".product");
-  e.target.classList.add("active");
-  e.target.innerHTML = `Adding to cart <div class="spinner-border spinner-border-sm" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>`;
 
   const id = productCard.getAttribute("product-id");
+
   if (cartData.some((el) => el.id == id)) {
     swalToast.fire({
       icon: "warning",
@@ -22,13 +19,18 @@ export const addToCart = async (e) => {
       method: "GET",
       redirect: "follow",
     };
-    const res = await fetch(`${base_URL}/${id}`, requestOptions);
+    e.target.classList.add("active");
+    e.target.innerHTML = `Adding to cart <div class="spinner-border spinner-border-sm" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>`;
+    // fetch product data
+    const res = await fetch(`${base_URL}/products/${id}`, requestOptions);
     const data = await res.json();
     const productData = {
       ...data,
       quantity: config.min,
     };
-
+    // push data
     cartData.unshift(productData);
 
     e.target.classList.add("active");

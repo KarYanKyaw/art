@@ -46,7 +46,7 @@ export const normalBtn = () => {
 };
 export const activeBtn = () => {
   return ` 
-      <button class="btn btn-outline-primary addBtn active w-100 d-block">
+      <button disabled class="btn btn-outline-primary active w-100 d-block">
       Added to cart <i class="bi pe-none bi-cart-check"></i>
       </button>`;
 };
