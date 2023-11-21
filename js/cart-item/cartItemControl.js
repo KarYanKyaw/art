@@ -38,7 +38,9 @@ const removeFunction = (id) => {
             cartData.splice(selectedItemIndex, 1);
             selectedItem.remove();
             cartItemRender(cartData);
+            addBtn.classList.remove("alreadyAdded");
             addBtn.classList.remove("active");
+            addBtn.classList.add("addBtn");
             addBtn.innerHTML = `Add to cart <i class="bi pe-none bi-cart-plus"></i>`;
           }
           swalToast.fire("Deleted!", "Your item is removed.", "success");
@@ -64,7 +66,7 @@ const quantityIncrement = (id) => {
   const cartItem = cartItems.querySelector(`[item-id="${id}"]`);
   const quantityEl = cartItem.querySelector(".quantity");
   const currentQuantity = parseInt(quantityEl.innerText);
-  if (currentQuantity <config.max) {
+  if (currentQuantity < config.max) {
     quantityEl.innerText = currentQuantity + 1;
     const selectedItem = cartData.find((el) => el.id == id);
     if (!selectedItem) return;

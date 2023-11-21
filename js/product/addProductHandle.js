@@ -4,17 +4,16 @@ import { swalToast } from "../functions/swal";
 import { app, cartBtn } from "../main/selectors";
 
 export const addToCart = async (e) => {
-  if (!e.target.classList.contains("addBtn")) return;
-  const productCard = e.target.closest(".product");
-
-  const id = productCard.getAttribute("product-id");
-
-  if (cartData.some((el) => el.id == id)) {
+  if (e.target.classList.contains("alreadyAdded")) {
     swalToast.fire({
       icon: "warning",
       title: "Your item is already in cart!",
     });
-  } else {
+  } else if (e.target.classList.contains("addBtn")) {
+    const productCard = e.target.closest(".product");
+
+    const id = productCard.getAttribute("product-id");
+
     const requestOptions = {
       method: "GET",
       redirect: "follow",
@@ -34,6 +33,8 @@ export const addToCart = async (e) => {
     cartData.unshift(productData);
 
     e.target.classList.add("active");
+    e.target.classList.remove("addBtn");
+    e.target.classList.add("alreadyAdded");
     e.target.innerHTML = `Added to cart <i class="bi pe-none bi-cart-check"></i>`;
 
     const currentProductImg = productCard.querySelector(".product-img");

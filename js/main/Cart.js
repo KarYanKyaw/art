@@ -2,12 +2,8 @@ import { dataFetching } from "../functions/data";
 import { observeCart } from "../functions/functions";
 import {
   cartItems,
-  clearInputBtn,
   orderBtn,
   productRow,
-  searchBtn,
-  searchForm,
-  searchInput,
 } from "../main/selectors";
 import { addToCart } from "../product/addProductHandle";
 import { cartControl } from "../cart-item/cartItemControl";
@@ -32,18 +28,6 @@ class Cart {
     });
     orderBtn.addEventListener("click", () => {
       placeOrder();
-    });
-    searchForm.addEventListener("submit", (e) => {
-      search(e);
-    });
-    searchInput.addEventListener("keyup", (e) => {
-      search(e);
-    });
-    clearInputBtn.addEventListener("click", (e) => {
-      clearInput(e);
-    });
-    searchBtn.addEventListener("click", () => {
-      searchInput.focus();
     });
   }
   init() {

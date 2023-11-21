@@ -1,12 +1,5 @@
 import { cartData } from "./data";
-import {
-  cartCount,
-  total,
-  cartItems,
-  myCart,
-  searchForm,
-  searchInput,
-} from "../main/selectors";
+import { cartCount, total, cartItems, myCart } from "../main/selectors";
 import { productRender } from "../product/productRender";
 
 // rate stars
@@ -46,7 +39,7 @@ export const normalBtn = () => {
 };
 export const activeBtn = () => {
   return ` 
-      <button disabled class="btn btn-outline-primary active w-100 d-block">
+      <button class="btn btn-outline-primary alreadyAdded active w-100 d-block">
       Added to cart <i class="bi pe-none bi-cart-check"></i>
       </button>`;
 };
