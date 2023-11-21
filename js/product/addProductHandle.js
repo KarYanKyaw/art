@@ -25,7 +25,7 @@ export const addToCart = async (e) => {
 
     buttonsToDisable.forEach((el) => (el.disabled = true));
     [...document.querySelectorAll(".alreadyAdded")].forEach((el) =>
-      el.classList.add("opacity-50")
+      el.classList.add("opacity-75")
     );
 
     const requestOptions = {
@@ -56,7 +56,7 @@ export const addToCart = async (e) => {
     setTimeout(() => {
       buttonsToDisable.forEach((el) => (el.disabled = false));
       [...document.querySelectorAll(".alreadyAdded")].forEach((el) =>
-        el.classList.remove("opacity-80")
+        el.classList.remove("opacity-75")
       );
     }, 2000);
 
