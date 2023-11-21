@@ -1,10 +1,10 @@
 import { cartData } from "../functions/data";
-import { rateStar,activeBtn, normalBtn } from "../functions/functions";
+import { rateStar, activeBtn, normalBtn } from "../functions/functions";
 
 export const createProduct = (id, title, image, description, price, rating) => {
   const product = document.createElement("div");
   product.className = "col-lg-4 col-10 col-md-6 mb-5";
-  const isExisted = cartData.find((el) => el.id == id);
+  const isExisted = cartData.some((el) => el.id == id);
   product.innerHTML = `
     <div class="product" product-id="${id}">
     <img
@@ -26,7 +26,7 @@ export const createProduct = (id, title, image, description, price, rating) => {
       <hr />
       <div class="price-add">
         <p class="fw-medium">$${price}</p>
-        ${isExisted ? activeBtn() : normalBtn()}
+        ${isExisted ? activeBtn(id) : normalBtn(id)}
       </div>
     </div>
   </div>

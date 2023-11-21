@@ -31,15 +31,15 @@ const totalCostCalc = () => {
 };
 
 // btn states
-export const normalBtn = () => {
+export const normalBtn = (id) => {
   return ` 
-    <button class="btn btn-outline-primary addBtn w-100 d-block">
+    <button  class="btn ${id} btn-outline-primary addBtn w-100 d-block">
       Add to cart <i class="bi pe-none bi-cart-plus"></i>
     </button>`;
 };
-export const activeBtn = () => {
+export const activeBtn = (id) => {
   return ` 
-      <button class="btn btn-outline-primary alreadyAdded active w-100 d-block">
+      <button class="btn ${id} btn-outline-primary alreadyAdded addBtn active w-100 d-block">
       Added to cart <i class="bi pe-none bi-cart-check"></i>
       </button>`;
 };
@@ -55,6 +55,7 @@ export const notFound = () => {
   return div;
 };
 // observer
+
 export const observeCart = () => {
   const observerOptions = {
     childList: true,
@@ -64,14 +65,10 @@ export const observeCart = () => {
   const observer = new MutationObserver(() => {
     counter();
     totalCostCalc();
-    localStorage.setItem("cart-data", JSON.stringify(cartData));
-    if (cartData.length == 0) {
+    if (cartData.length === 0) {
       myCart.hide();
-      [...document.querySelectorAll(".addBtn")].forEach((btn) => {
-        btn.classList.remove("active"),
-          (btn.innerHTML = `Add to cart <i class="bi pe-none bi-cart-plus"></i>`);
-      });
     }
+    productRender();
   });
   observer.observe(cartItems, observerOptions);
 };

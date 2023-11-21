@@ -1,14 +1,11 @@
 import { dataFetching } from "../functions/data";
 import { observeCart } from "../functions/functions";
-import {
-  cartItems,
-  orderBtn,
-  productRow,
-} from "../main/selectors";
+import { cartItems, orderBtn, productRow } from "../main/selectors";
 import { addToCart } from "../product/addProductHandle";
 import { cartControl } from "../cart-item/cartItemControl";
 import { placeOrder } from "../order/order";
 import { loadingProduct } from "../product/loadingProduct";
+import { productRender } from "../product/productRender";
 
 class Cart {
   observer() {

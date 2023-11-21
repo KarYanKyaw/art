@@ -31,6 +31,7 @@ export const placeOrder = () => {
             user_id: "GGWP8834",
           };
           cartData.splice(0, cartData.length);
+          console.log(cartData)
           cartItemRender(cartData);
           console.log(myOrder);
           confirmModal.fire({

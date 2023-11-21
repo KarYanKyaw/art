@@ -2,6 +2,7 @@ import { cartItems } from "../main/selectors";
 import { cartItemRender } from "./cartRender";
 import { cartData, config } from "../functions/data";
 import { confirmModal, swalToast } from "../functions/swal";
+import { productRender } from "../product/productRender";
 
 export const cartControl = (e) => {
   const id = e.target.closest(".cart-item").getAttribute("item-id");
@@ -38,10 +39,7 @@ const removeFunction = (id) => {
             cartData.splice(selectedItemIndex, 1);
             selectedItem.remove();
             cartItemRender(cartData);
-            addBtn.classList.remove("alreadyAdded");
-            addBtn.classList.remove("active");
-            addBtn.classList.add("addBtn");
-            addBtn.innerHTML = `Add to cart <i class="bi pe-none bi-cart-plus"></i>`;
+            productRender();
           }
           swalToast.fire("Deleted!", "Your item is removed.", "success");
           return addBtn;
