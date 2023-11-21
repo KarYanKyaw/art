@@ -16,17 +16,10 @@ export const addToCart = async (e) => {
 
     const btn = document.querySelectorAll(".addBtn");
     const buttonsToDisable = [
-      ...[...btn].filter(
-        (el) =>
-          !el.classList.contains(`${id}`) &&
-          !el.classList.contains("alreadyAdded")
-      ),
+      ...[...btn].filter((el) => !el.classList.contains(`${id}`)),
     ];
 
     buttonsToDisable.forEach((el) => (el.disabled = true));
-    [...document.querySelectorAll(".alreadyAdded")].forEach((el) =>
-      el.classList.add("opacity-75")
-    );
 
     const requestOptions = {
       method: "GET",
@@ -53,12 +46,10 @@ export const addToCart = async (e) => {
     });
 
     cartItemRender(cartData);
+
     setTimeout(() => {
       buttonsToDisable.forEach((el) => (el.disabled = false));
-      [...document.querySelectorAll(".alreadyAdded")].forEach((el) =>
-        el.classList.remove("opacity-75")
-      );
-    }, 2000);
+    }, 4000);
 
     return cartData;
   }

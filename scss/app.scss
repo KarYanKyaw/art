@@ -105,4 +105,10 @@ body {
   min-width: 180px !important; /* Adjust the width as needed */
 }
 
+.alreadyAdded:disabled {
+  opacity: 75% !important;
+  background: #333 !important;
+  color: white !important;
+}
+
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
