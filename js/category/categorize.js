@@ -12,7 +12,7 @@ export const categorize = (categoryBtn) => {
       .then((res) => res.json())
       .then((products) => productRender(products));
   } else {
-    fetch(`${base_URL}/products?category=${category}`)
+    fetch(`${base_URL}/products/category/${category}`)
       .then((res) => res.json())
       .then((products) => productRender(products));
   }

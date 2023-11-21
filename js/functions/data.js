@@ -2,7 +2,7 @@ export const products = [];
 import { categoryRender } from "../category/categoryRender";
 import { productRender } from "../product/productRender";
 
-export const base_URL = "http://localhost:5173/api";
+export const base_URL = "https://fakestoreapi.com";
 
 export const dataFetching = async () => {
   const requestOptions = {
@@ -11,9 +11,13 @@ export const dataFetching = async () => {
   };
 
   // category
-  const resCategories = await fetch(`${base_URL}/categories`, requestOptions);
+  const resCategories = await fetch(
+    `${base_URL}/products/categories`,
+    requestOptions
+  );
   const categories = await resCategories.json();
-  categoryRender(categories);
+
+  categoryRender(["All", ...categories]);
 
   // products
   const resProduct = await fetch(`${base_URL}/products`, requestOptions);
@@ -21,7 +25,7 @@ export const dataFetching = async () => {
   productRender(products);
 };
 
-export let cartData =  [];
+export let cartData = [];
 
 export const config = {
   min: 1,

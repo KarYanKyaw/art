@@ -13,48 +13,13 @@
         <header class="sticky-top">
           <nav class="navbar navbar-expand-lg bg-body-tertiary" id="nav">
             <div class="container border-bottom border-2">
-              <div class="brand-name">
+              <div class="brand-name user-select-none">
                 <p class="mb-0 fs-3">MMS-IT solutions</p>
                 <p class="text-black-50">E-commerce</p>
               </div>
               <div
                 class="nav-controls d-flex justify-content-center align-items-center"
               >
-                <div class="dropdown">
-                  <button
-                    class="btn btn-outline-primary"
-                    id="search"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="bi bi-search"></i>
-                  </button>
-                  <ul
-                    class="dropdown-menu p-0 custom-dropdown-menu dropdown-menu-end"
-                    aria-labelledby="search"
-                  >
-                    <li>
-                      <form class="p-0" id="searchForm">
-                        <div class="input-group">
-                          <button class="btn btn-primary" type="submit">
-                            <i class="bi bi-search"></i>
-                          </button>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Search..."
-                            aria-label="Search"
-                            id="searchInput"
-                            name="searchInput"
-                          />
-                          <i
-                            class="bi bi-x position-absolute fs-5 position-relative clearInputBtn"
-                          ></i>
-                        </div>
-                      </form>
-                    </li>
-                  </ul>
-                </div>
                 <button
                   class="btn btn-primary position-relative ms-3"
                   type="button"
@@ -81,9 +46,9 @@
           <!-- category and products -->
           <div class="w-100">
             <!-- category -->
-            <section class="category-section">
+            <section id="category-section">
               <div>
-                <p class="ms-2 mb-2 fw-medium">Product Categories</p>
+                <p class="ms-2 mb-3 fw-medium">Product Categories</p>
                 <div class="categories ms-2 user-select-none">
                   <ul class="list-unstyled d-flex" id="categories">
                     <li
@@ -121,9 +86,7 @@
               <div
                 class="row justify-content-center justify-content-lg-start g-3"
                 id="products"
-              >
-              
-              </div>
+              ></div>
             </section>
           </div>
           <!-- footer -->
@@ -134,7 +97,7 @@
               Copyright &copy;
               <a class="text-reset" href="https://mms-it.com">MMS IT</a>
             </p>
-            <a href="#nav" class="btn btn-outline-light">
+            <a href="#category-section" class="btn btn-outline-light">
               <i class="bi bi-arrow-up"></i>
             </a>
           </footer>
