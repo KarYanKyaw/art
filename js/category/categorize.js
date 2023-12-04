@@ -10,10 +10,11 @@ export const categorize = (categoryBtn) => {
   if (category == "all") {
     fetch(`${base_URL}/products`)
       .then((res) => res.json())
-      .then((products) => productRender(products));
-  } else {
+      .then((data) => productRender(data));
+  } else if (category !== "all") {
     fetch(`${base_URL}/products/category/${category}`)
       .then((res) => res.json())
-      .then((products) => productRender(products));
+      .then((data) => productRender(data));
+    
   }
 };

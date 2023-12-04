@@ -1,11 +1,11 @@
 import { categoryRender } from "../category/categoryRender";
-import { productRender } from "../product/productRender";
+import { productRender, productRenderInitial } from "../product/productRender";
 
 export const base_URL = "https://fakestoreapi.com";
 
 export const dataFetching = async () => {
   await categoryRender();
-  await productRender();
+  await productRenderInitial();
 };
 
 export let cartData = [];

@@ -3,17 +3,9 @@ import { productRow } from "../main/selectors";
 import { notFound } from "../functions/functions";
 import { base_URL } from "../functions/data";
 
-export const productRender = async () => {
-  const requestOptions = {
-    method: "GET",
-    redirect: "follow",
-  };
-  // products
-  const resProduct = await fetch(`${base_URL}/products`, requestOptions);
-  const productsData = await resProduct.json();
-
+export const productRender = async (productsData) => {
   productRow.innerHTML = "";
-  
+
   if (productsData.length === 0) {
     productRow.append(notFound());
   } else {
@@ -24,4 +16,14 @@ export const productRender = async () => {
     });
   }
   return productRow;
+};
+export const productRenderInitial = async () => {
+  const requestOptions = {
+    method: "GET",
+    redirect: "follow",
+  };
+  // products
+  const resProduct = await fetch(`${base_URL}/products`, requestOptions);
+  const productsData = await resProduct.json();
+  productRender(productsData);
 };

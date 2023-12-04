@@ -1,6 +1,6 @@
 import { cartData } from "./data";
 import { cartCount, total, cartItems, myCart } from "../main/selectors";
-import { productRender } from "../product/productRender";
+import { productRender, productRenderInitial } from "../product/productRender";
 
 // rate stars
 export const rateStar = (rate) => {
@@ -68,7 +68,7 @@ export const observeCart = () => {
     if (cartData.length === 0) {
       myCart.hide();
     }
-    productRender();
+    productRenderInitial();
   });
   observer.observe(cartItems, observerOptions);
 };
